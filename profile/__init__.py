@@ -9,6 +9,9 @@ if not auth_profile_module:
     raise ImproperlyConfigured("You must provide an AUTH_PROFILE_MODULE setting.")
    
 # connect profile property to user
-#profile_model = utils.get_profile_model()
-User.profile = utils.get_profile_model()
-#User.profile = property(lambda u: profile_model.objects.get_or_create(user=u)[0])
+
+def get_profile(user):
+    profile_model = utils.get_profile_model()
+    return profile_model.objects.get_or_create(user=user)[0]
+
+User.profile = property(lambda user: get_profile(user))
