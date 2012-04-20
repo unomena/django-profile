@@ -11,6 +11,7 @@ if profile_model:
     # setup profile inline
     class ProfileInline(admin.StackedInline):
         model = profile_model
+        fk_name = 'user'
 
     class UserAdmin(UserAdmin):
         inlines = [
