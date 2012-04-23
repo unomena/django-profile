@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='django-profile',
-    version='0.0.3.unomena.3',
+    version='0.0.3.unomena.4',
     description='Django user profile app.',
     long_description = open('README.rst', 'r').read(),
     author='Praekelt Foundation',
